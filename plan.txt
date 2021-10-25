@@ -2,12 +2,12 @@ Basics of the game
 ------------------
 
 P1
-- chooses a real word (or fictional is agreed upon by P2).
+- chooses a real word (or fictional if agreed upon by P2).
 
 P2
 - must guess what that word is.
 - can only guess one letter at a time.
 - gets a total of 10 wrong answers allowed
-- if a letter is correctly guessed, that letter must be revealed in the chosen word
+- if a letter is correctly guessed, that letter must be revealed in the chosen word, and that letter cannot be chosen again
 - if a letter is guessed incorrectly, that letter cannot be chosen again, this also counts as a wrong answer
 - after 10 incorrect guesses, the game ends

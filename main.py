@@ -15,27 +15,31 @@ print("\n"
       "\n")
 
 wrong_guesses = 0
+guess_list = []
 
 while wrong_guesses < 10:
 
     guess = str(input("Guess a letter: "))
     length = len(guess)
-    guess_list = []
 
     if length == 1:  # if the length of the character is 1
 
-        # if guess has already been guessed
-        # need to add guesses to a list
-        # everytime a letter is guessed, scan through list to see if it appears
-        # append list if not already in it
+        if guess in guess_list:  # if character has already been guessed before
+            print("This letter has already been guessed ")
 
-        if guess in word:  # if the guessed character is in the word
-            print(guess, "is in the word!")
+        else:  # if character has not already been guessed before
+            guess_list = guess_list.append(guess)
 
-        else:  # if the guessed character is not in the word
-            print("Sorry, ", guess, " is not in the word.\n")
-            print("You have", (9 - wrong_guesses), "wrong guesses remaining.")
-            wrong_guesses = wrong_guesses + 1
+            if guess in word:  # if the guessed character is in the word
+                print(guess, "does appear in the word!")
+                # word.split()??
+                # print out set of ----- with length of word
+                # if guess is in word, replace - with guess in same index as it occurs in word
+
+            else:  # if the guessed character is not in the word
+                print("Sorry, ", guess, " is not in the word.\n")
+                print("You have", (9 - wrong_guesses), "wrong guesses remaining.")
+                wrong_guesses = wrong_guesses + 1
 
     else:  # if the length of the character is not equal to 1
         print("--Please enter a single character--\n")

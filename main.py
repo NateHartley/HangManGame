@@ -2,6 +2,8 @@ import hangmanvisuals
 
 while True:
     word = str(input("Enter a word for the other player to guess: "))
+    word_list = list(word)
+    i = 0
 
     if len(word) <= 15:
 
@@ -22,8 +24,14 @@ while True:
 
         wrong_guesses = 0
         guess_list = []
+        print("The number of letters in the word is: ", len(word))
 
         while wrong_guesses < 10:
+
+            blanks = []
+            for i in word_list:
+                blanks.append("_")
+            print(blanks)
 
             guess = str(input("Guess a letter: "))
             length = len(guess)
@@ -38,8 +46,9 @@ while True:
                     guess_list.append(guess)
                     print("You're guesses are:", guess_list)
 
-                    if guess in word:  # if the guessed character is in the word
+                    if guess in word_list:  # if the guessed character is in the word
                         print(guess, "does appear in the word!")
+
                         # word.split()??
                         # print out set of ----- with length of word
                         # if guess is in word, replace - with guess in same index as it occurs in word
